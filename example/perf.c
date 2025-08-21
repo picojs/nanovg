@@ -3,8 +3,11 @@
 #include <string.h>
 #include <math.h>
 
-#include "gl.h"
-
+#if defined(NANOVG_GLES2) || defined(NANOVG_GLES3)
+    #include "gles2.h"
+#else
+    #include "gl.h"
+#endif
 #include <GLFW/glfw3.h>
 #include "nanovg.h"
 
@@ -15,7 +18,7 @@
 #endif
 
 #if defined(NANOVG_GLES2) || defined(NANOVG_GLES3)
-/* Constants */
+// Constants
 #ifndef GL_TIME_ELAPSED
 #  define GL_TIME_ELAPSED GL_TIME_ELAPSED_EXT
 #endif
@@ -29,7 +32,7 @@
 #  define GL_TIMESTAMP GL_TIMESTAMP_EXT
 #endif
 
-/* Functions: alias desktop names to EXT names */
+//Functions: alias desktop names to EXT names
 #define glGenQueries         glGenQueriesEXT
 #define glDeleteQueries      glDeleteQueriesEXT
 #define glBeginQuery         glBeginQueryEXT
