@@ -20,7 +20,7 @@ endif()
 if (${NVG_BUILD_GL3_EXAMPLE} AND ${NVG_BUILD_WITH_MSAA})
     add_executable(example_gl3_msaa example_gl3.c demo.c perf.c)
     target_link_libraries(example_gl3_msaa nanovg-static glfw GL m)
-    target_compile_options(example_gl3_msaa PRIVATE -g -Wall -Wextra -DDEMO_MSAA)
+    target_compile_definitions(example_gl3_msaa PRIVATE DEMO_MSAA)
 endif()
 
 if (${NVG_BUILD_GLES3_EXAMPLE})
