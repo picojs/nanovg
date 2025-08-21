@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.11)
 
 project(nanovg C)
 
-option(NVG_BUILD_GL_EXAMPLE "Build GL3 example" OFF])
-option(NVG_BUILD_GLES_EXAMPLE "Build GLES example" OFF])
+option(NVG_BUILD_GL3_EXAMPLE "Build GL3 example" OFF])
+option(NVG_BUILD_GLES3_EXAMPLE "Build GLES example" OFF])
 option(NVG_BUILD_WITH_MSAA "Build with MSAA on" OFF])
 option(NVG_BUILD_SHARED "Build shared (dyanmic) library" OFF])
 

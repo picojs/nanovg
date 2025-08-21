@@ -17,8 +17,13 @@
 //
 
 #include <stdio.h>
-#define GLFW_INCLUDE_ES3
-#define GLFW_INCLUDE_GLEXT
+
+#define GLAD_GLES2_IMPLEMENTATION
+#define GLAD_EGL_IMPLEMENTATION
+#include "gles2.h"
+
+//#define GLFW_INCLUDE_ES3
+//#define GLFW_INCLUDE_GLEXT
 #include <GLFW/glfw3.h>
 #include "nanovg.h"
 #define NANOVG_GLES3_IMPLEMENTATION
@@ -78,6 +83,8 @@ int main()
 		glfwTerminate();
 		return -1;
 	}
+
+    gladLoaderLoadGLES2();
 
 	glfwSetKeyCallback(window, key);
 
@@ -141,7 +148,7 @@ int main()
 			screenshot = 0;
 			saveScreenShot(fbWidth, fbHeight, premult, "dump.png");
 		}
-		
+
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}

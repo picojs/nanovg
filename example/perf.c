@@ -14,6 +14,33 @@
 #include <iconv.h>
 #endif
 
+#if defined(NANOVG_GLES2) || defined(NANOVG_GLES3)
+/* Constants */
+#ifndef GL_TIME_ELAPSED
+#  define GL_TIME_ELAPSED GL_TIME_ELAPSED_EXT
+#endif
+#ifndef GL_QUERY_RESULT
+#  define GL_QUERY_RESULT GL_QUERY_RESULT_EXT
+#endif
+#ifndef GL_QUERY_RESULT_AVAILABLE
+#  define GL_QUERY_RESULT_AVAILABLE GL_QUERY_RESULT_AVAILABLE_EXT
+#endif
+#ifndef GL_TIMESTAMP
+#  define GL_TIMESTAMP GL_TIMESTAMP_EXT
+#endif
+
+/* Functions: alias desktop names to EXT names */
+#define glGenQueries         glGenQueriesEXT
+#define glDeleteQueries      glDeleteQueriesEXT
+#define glBeginQuery         glBeginQueryEXT
+#define glEndQuery           glEndQueryEXT
+#define glQueryCounter       glQueryCounterEXT
+#define glGetQueryiv         glGetQueryivEXT
+#define glGetQueryObjectiv   glGetQueryObjectivEXT
+#define glGetQueryObjectuiv  glGetQueryObjectuivEXT
+#define glGetInteger64v      glGetInteger64vEXT
+#endif
+
 // timer query support
 #ifndef GL_ARB_timer_query
 #define GL_TIME_ELAPSED                   0x88BF
