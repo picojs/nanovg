@@ -44,11 +44,13 @@
 #define glGetInteger64v      glGetInteger64vEXT
 #endif
 
+#if 0
 // timer query support
 #ifndef GL_ARB_timer_query
 #define GL_TIME_ELAPSED                   0x88BF
 //typedef void (APIENTRY *pfnGLGETQUERYOBJECTUI64V)(GLuint id, GLenum pname, GLuint64* params);
 //pfnGLGETQUERYOBJECTUI64V glGetQueryObjectui64v = 0;
+#endif
 #endif
 
 void initGPUTimer(GPUtimer* timer)

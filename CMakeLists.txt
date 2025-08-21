@@ -21,9 +21,8 @@ set(NANOVG_SOURCES
 
 set(NANOVG_HEADERS
     ./include/nanovg.h
+    ./include/nanovg_gl.h
     src/fontstash.h
-    src/nanovg_gl.h
-    src/nanovg_gl_utils.h
     src/stb_image.h
     src/stb_truetype.h
 )
