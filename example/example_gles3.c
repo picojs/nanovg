@@ -84,11 +84,14 @@ int main()
 		return -1;
 	}
 
-    gladLoaderLoadGLES2();
-
 	glfwSetKeyCallback(window, key);
 
 	glfwMakeContextCurrent(window);
+
+    if(gladLoadGLES2((GLADloadfunc)glfwGetProcAddress) == 0) {
+		printf("Could not initialize GLAD.\n");
+		return -1;
+	}
 
 	vg = nvgCreateGLES3(NVG_ANTIALIAS | NVG_STENCIL_STROKES | NVG_DEBUG);
 	if (vg == NULL) {

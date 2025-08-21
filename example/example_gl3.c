@@ -93,8 +93,6 @@ int main()
 		return -1;
 	}
 
-    gladLoaderLoadGL();
-
 	glfwSetKeyCallback(window, key);
 
 	glfwMakeContextCurrent(window);
