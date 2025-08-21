@@ -8,11 +8,12 @@ option(NVG_BUILD_WITH_MSAA "Build with MSAA on" OFF])
 option(NVG_BUILD_SHARED "Build shared (dyanmic) library" OFF])
 option(NVG_INSTALL "Generate install targets" ON)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
-include_directories(include)
+include_directories(PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 set(NANOVG_SOURCES
     src/nanovg.c

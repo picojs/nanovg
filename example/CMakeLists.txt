@@ -1,3 +1,6 @@
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 file(COPY ${PROJECT_SOURCE_DIR}/example/images DESTINATION ${PROJECT_BINARY_DIR}/example)
 
 file(GLOB TTF_FILES
@@ -7,8 +10,6 @@ file(GLOB TTF_FILES
 file(COPY ${TTF_FILES} DESTINATION ${PROJECT_BINARY_DIR}/example)
 
 include_directories(../src)
-
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 if (${NVG_BUILD_GL3_EXAMPLE})
     add_executable(example_gl3 example_gl3.c demo.c perf.c)
