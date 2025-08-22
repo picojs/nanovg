@@ -17,7 +17,7 @@
 #include <iconv.h>
 #endif
 
-#if defined(NANOVG_GLES2) || defined(NANOVG_GLES3)
+#if defined(NANOVG_TIMER_EXT)
 // Constants
 #ifndef GL_TIME_ELAPSED
 #  define GL_TIME_ELAPSED GL_TIME_ELAPSED_EXT

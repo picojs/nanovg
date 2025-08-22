@@ -97,7 +97,7 @@ int main()
 
 	glfwMakeContextCurrent(window);
 
-    if(gladLoaderLoadGL() == 0) {
+    if(gladLoadGL((GLADloadfunc)glfwGetProcAddress) == 0) {
 		printf("Could not initialize GLAD.\n");
 		return -1;
 	}

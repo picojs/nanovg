@@ -4,6 +4,7 @@ project(nanovg C)
 
 option(NVG_BUILD_GL3_EXAMPLE "Build GL3 example" OFF])
 option(NVG_BUILD_GLES3_EXAMPLE "Build GLES example" OFF])
+option(NVG_BUILD_FBO_EXAMPLE "Build FBO example" ON])
 option(NVG_BUILD_WITH_MSAA "Build with MSAA on" OFF])
 option(NVG_BUILD_SHARED "Build shared (dyanmic) library" OFF])
 option(NVG_INSTALL "Generate install targets" OFF)
