@@ -14,8 +14,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
-#include_directories(PUBLIC ${PROJECT_SOURCE_DIR}/include)
-
 set(NANOVG_SOURCES
     ./src/nanovg.c
 )
@@ -30,6 +28,10 @@ set(NANOVG_HEADERS
 
 if (${NVG_BUILD_SHARED})
     add_library(nanovg SHARED ${NANOVG_SOURCES} ${NANOVG_HEADERS})
+    target_include_directories(nanovg PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+    )
 endif()
 
 add_library(nanovg-static STATIC ${NANOVG_SOURCES} ${NANOVG_HEADERS})
